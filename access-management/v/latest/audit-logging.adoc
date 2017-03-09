@@ -1093,6 +1093,79 @@ properties : application metadata
 
 |===
 
+== To Configure Anypoint MQ Audit Logging
+
+Anypoint MQ lets you log each action for creating and maintaining queues,
+exchanges, and client applications. These actions appear in the 
+*Access Management* > *Audit Logging* service.
+
+=== About Anypoint MQ Audit Logs
+
+The MQ audit log screen is:
+
+image:mq-audit-logs.png[mq-audit-logs]
+
+These actions are tracked:
+
+* Create Queue
+* Delete Queue
+* Modify Queue
+* Create Exchange
+* Delete Exchange
+* Modify Exchange
+
+For each action, you can download a payload file (`payload.txt`) to your computer 
+that provides JSON-formatted information describing all MQ settings. 
+
+The following example lists a formatted version of the contents of `payload.txt`:
+
+[source,xml,linenums]
+----
+{
+  "organizationId":"<organization_ID>“,
+  "environmentId":"<environment_ID>",
+  "objectName":"FifoQueue",
+  "userName”:”Me”,
+  "objectId":"FifoQueue",
+  "regionId":"us-west-2",
+  "destinationType":"QUEUE"
+}
+----
+
+=== About Sample Use Cases
+
+A few of the reasons you may want to use Audit Logs:
+
+* An administrator has been alerted that an expected FIFO queue is no longer available. The administrator can check the Audit Logs and determine who deleted the queue and when. This lets the administrator understand the issue better.
+* A sub-organization administrator has been alerted that a user has had their permissions removed for a given custom role. Using the Audit Log feature and examining the payload the administrator can determine what permissions were changed and by who.
+* To search all actions of a user.
+* To search for all sign-in attempts.
+* To search all actions to an object and by whom.
+
+=== About Audit Log REST API Access
+
+You can access the 
+link:https://anypoint.mulesoft.com/apiplatform/anypoint-platform/#/portals/organizations/68ef9520-24e9-4cf2-b2f5-620025690913/apis/24562/versions/26089/pages/39846[Audit Log REST API] from the Audit Logging Query API and its 
+link:https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/68ef9520-24e9-4cf2-b2f5-620025690913/public/apis/24562/versions/26089/files/root[RAML].
+
+Sample curl commands for accessing the API:
+
+[source,xml,linenums]
+----
+curl 'https://anypoint.mulesoft.com/audit/v2/organizations/<organization_id>/platforms?include_internal=false' -H 'Authorization: bearer <bearer_value>' 
+
+curl 'https://anypoint.mulesoft.com/audit/v2/organizations/<organization_id>/objectTypes?include_internal=false' -H 'Authorization: bearer <bearer_value>' 
+
+curl 'https://anypoint.mulesoft.com/audit/v2/organizations/<organization_id>/actions?include_internal=false' -H 'Authorization: bearer <bearer_value>' 
+
+curl 'https://anypoint.mulesoft.com/audit/v2/organizations/<organization_id>/query?include_internal=false' -H 'Authorization: bearer <bearer_value>' -H 'Content-Type: application/json;charset=UTF-8' -H 'Accept: application/json, text/plain, */*' --data-binary '{"startDate":"2017-03-08T20:16:41.250Z","endDate":"2017-03-08T21:16:41.250Z","platforms":[],"objectTypes":[],"actions":[],"objectIds":[],"userIds":[],"ascending":false,"organizationId":"<organization_id>","offset":0,"limit":25}' --compressed ;
+
+curl 'https://anypoint.mulesoft.com/accounts/api/organizations/<organization_id>/users?id=<user_ID>' -H 'Authorization: bearer <bearer_value>'
+
+curl 'https://anypoint.mulesoft.com/audit/v2/organizations/<organization_id>/objects?include_internal=false' -H 'Authorization: bearer <bearer_value>'
+----
+
+
 = See Also
 
 * You can also access Audit Logging data through the Anypoint Platform’s link:https://anypoint.mulesoft.com/apiplatform/anypoint-platform/#/portals/organizations/68ef9520-24e9-4cf2-b2f5-620025690913/apis/24562/versions/26089/pages/39846[Audit Logging Query API].

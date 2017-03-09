@@ -1119,7 +1119,7 @@ that provides JSON-formatted information describing all MQ settings.
 
 The following example lists a formatted version of the contents of `payload.txt`:
 
-[source,xml,linenums]
+[source,json,linenums]
 ----
 {
   "organizationId":"<organization_ID>“,

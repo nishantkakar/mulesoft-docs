@@ -1101,21 +1101,41 @@ exchanges, and client applications. These actions appear in the
 
 === About Anypoint MQ Audit Logs
 
-The MQ audit log screen is:
+The Audit Log screen with Anypoint MQ actions appears as follows:
 
 image:mq-audit-logs.png[mq-audit-logs]
 
+*Note:* After setting the *Products*, *Types*, or *Actions* filters, click *Apply filters*.
+
+=== About Actions
+
 These actions are tracked:
 
-* Create Queue
-* Delete Queue
-* Modify Queue
-* Create Exchange
-* Delete Exchange
-* Modify Exchange
+[%header%autowidth.spread]
+|===
+|Queues: |Exchanges: |Applications:
+|* `Create queue`
+* `Delete queue`
+* `Modify queue`
+* `Create binding`
+* `Delete binding`
+||* `Create exchange`
+* `Delete exchange`
+* `Modify exchange`
+|||* `Create client`
+* `Delete client`
+|===
+
+*Notes:* 
+
+* Changing values within a queue causes the `Modify queue` action.
+* Queue actions cannot identify whether a queue is FIFO or non-FIFO.
+* Sending or browsing messages does not cause an action.
 
 For each action, you can download a payload file (`payload.txt`) to your computer 
-that provides JSON-formatted information describing all MQ settings. 
+that provides JSON-formatted information describing all MQ settings.
+
+=== About Payloads
 
 The following example lists a formatted version of the contents of `payload.txt`:
 
@@ -1136,11 +1156,8 @@ The following example lists a formatted version of the contents of `payload.txt`
 
 A few of the reasons you may want to use Audit Logs:
 
-* An administrator has been alerted that an expected FIFO queue is no longer available. The administrator can check the Audit Logs and determine who deleted the queue and when. This lets the administrator understand the issue better.
-* A sub-organization administrator has been alerted that a user has had their permissions removed for a given custom role. Using the Audit Log feature and examining the payload the administrator can determine what permissions were changed and by who.
-* To search all actions of a user.
-* To search for all sign-in attempts.
-* To search all actions to an object and by whom.
+* Determine all MQ actions of a user.
+* Determine all MQ actions to an object and by whom.
 
 === About Audit Log REST API Access
 

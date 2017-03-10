@@ -1148,7 +1148,7 @@ You can access the
 link:https://anypoint.mulesoft.com/apiplatform/anypoint-platform/#/portals/organizations/68ef9520-24e9-4cf2-b2f5-620025690913/apis/24562/versions/26089/pages/39846[Audit Log REST API] from the Audit Logging Query API and its 
 link:https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/68ef9520-24e9-4cf2-b2f5-620025690913/public/apis/24562/versions/26089/files/root[RAML].
 
-Sample curl commands for accessing the API:
+Sample curl commands for accessing the API
 
 [source,xml,linenums]
 ----

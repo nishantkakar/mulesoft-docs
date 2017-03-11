@@ -1114,15 +1114,21 @@ These actions are tracked:
 [%header%autowidth.spread]
 |===
 |Queues: |Exchanges: |Applications:
-|* `Create queue`
+|
+
+* `Create queue`
 * `Delete queue`
 * `Modify queue`
 * `Create binding`
 * `Delete binding`
-||* `Create exchange`
+||
+
+* `Create exchange`
 * `Delete exchange`
 * `Modify exchange`
-|||* `Create client`
+|||
+
+* `Create client`
 * `Delete client`
 |===
 
@@ -1165,21 +1171,20 @@ You can access the
 link:https://anypoint.mulesoft.com/apiplatform/anypoint-platform/#/portals/organizations/68ef9520-24e9-4cf2-b2f5-620025690913/apis/24562/versions/26089/pages/39846[Audit Log REST API] from the Audit Logging Query API and its 
 link:https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/68ef9520-24e9-4cf2-b2f5-620025690913/public/apis/24562/versions/26089/files/root[RAML].
 
-Sample curl commands for accessing the API
+The following are example `curl` commands for accessing the API (Windows users need to download `curl` before using these commands).
 
-[source,xml,linenums]
+Get authorization information:
+
+[source,xml]
 ----
 curl 'https://anypoint.mulesoft.com/audit/v2/organizations/<organization_id>/platforms?include_internal=false' -H 'Authorization: bearer <bearer_value>' 
+----
 
-curl 'https://anypoint.mulesoft.com/audit/v2/organizations/<organization_id>/objectTypes?include_internal=false' -H 'Authorization: bearer <bearer_value>' 
+Get actions by date range:
 
-curl 'https://anypoint.mulesoft.com/audit/v2/organizations/<organization_id>/actions?include_internal=false' -H 'Authorization: bearer <bearer_value>' 
-
+[source,xml]
+----
 curl 'https://anypoint.mulesoft.com/audit/v2/organizations/<organization_id>/query?include_internal=false' -H 'Authorization: bearer <bearer_value>' -H 'Content-Type: application/json;charset=UTF-8' -H 'Accept: application/json, text/plain, */*' --data-binary '{"startDate":"2017-03-08T20:16:41.250Z","endDate":"2017-03-08T21:16:41.250Z","platforms":[],"objectTypes":[],"actions":[],"objectIds":[],"userIds":[],"ascending":false,"organizationId":"<organization_id>","offset":0,"limit":25}' --compressed ;
-
-curl 'https://anypoint.mulesoft.com/accounts/api/organizations/<organization_id>/users?id=<user_ID>' -H 'Authorization: bearer <bearer_value>'
-
-curl 'https://anypoint.mulesoft.com/audit/v2/organizations/<organization_id>/objects?include_internal=false' -H 'Authorization: bearer <bearer_value>'
 ----
 
 

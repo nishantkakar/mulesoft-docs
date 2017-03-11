@@ -1120,10 +1120,10 @@ These actions are tracked:
 `Purge queue` +
 `Create binding` +
 `Delete binding` +
-||`Create exchange` +
+|`Create exchange` +
 `Delete exchange` +
 `Modify exchange` +
-|||`Create client` +
+|`Create client` +
 `Delete client` +
 |===
 

@@ -1114,22 +1114,17 @@ These actions are tracked:
 [%header%autowidth.spread]
 |===
 |Queues: |Exchanges: |Applications:
-|
-
-* `Create queue`
-* `Delete queue`
-* `Modify queue`
-* `Create binding`
-* `Delete binding`
-||
-
-* `Create exchange`
-* `Delete exchange`
-* `Modify exchange`
-|||
-
-* `Create client`
-* `Delete client`
+|`Create queue` +
+`Delete queue` +
+`Modify queue` +
+`Purge queue` +
+`Create binding` +
+`Delete binding` +
+||`Create exchange` +
+`Delete exchange` +
+`Modify exchange` +
+|||`Create client` +
+`Delete client` +
 |===
 
 *Notes:* 

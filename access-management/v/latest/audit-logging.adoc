@@ -1125,6 +1125,7 @@ These actions are tracked:
 `Modify exchange` +
 |`Create client` +
 `Delete client` +
+`Regenerate client`
 |===
 
 *Notes:* 

@@ -1144,10 +1144,10 @@ The following example shows a formatted version of the contents of `payload.txt`
 [source,json,linenums]
 ----
 {
-  "organizationId":"<organization_ID>“,
+  "organizationId":"<organization_ID>",
   "environmentId":"<environment_ID>",
   "objectName":"FifoQueue",
-  "userName”:”Me”,
+  "userName":"Me",
   "objectId":"FifoQueue",
   "regionId":"us-west-2",
   "destinationType":"QUEUE"

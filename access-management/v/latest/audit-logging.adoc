@@ -3,11 +3,25 @@
 
 Changes made by users within an Anypoint Platform organization are logged through an audit logging service. You can access the data logs through the link:https://anypoint.mulesoft.com/apiplatform/anypoint-platform/#/portals/organizations/68ef9520-24e9-4cf2-b2f5-620025690913/apis/24562/versions/26089/pages/39846[Audit Logging Query API] or through the Audit Logging UI.
 
-== Overview
-
 The audit logging service provides a queryable history of actions performed within the Anypoint platform, it keeps track of all users who have interacted with objects in the system, timestamping these actions and providing mechanisms for querying the set of users who have performed actions, the set of objects that have had actions performed on them, and other endpoints that enable the querying of log entries.
 
-Each log entry has a set of properties that provides us with more information about the activity:
+== To Access Audit Logging
+
+Users belonging to the *Organization Administration* role or the *Audit Log Viewer* role on the Anypoint Platform have access to both the UI and the Query API. The audit log service is business group aware, meaning, you will see only logs that are relevant to your own business group. The audit log UI is embedded in Access Manager, if you are not an Organization Administrator, but you have the Audit Log Viewer role, then you will see only the audit log UI under Access Manager.
+
+To view the audit logs, log into link:https://anypoint.mulesoft.com/#/signin[Anypoint Platform] and click *Access Management*. You can also press the Escape key on your keyboard to view the Anypoint Platform navigation menu.
+
+From the Access Management menu, select *Audit Log* 
+
+image:audit-logs.png[audit-logs]
+
+image:audit-logs-screenshot.png[audit-logs-screenshot]
+
+== About Log Contents
+
+Activities represented in the log are actions that occur at a particular time, involve one or more objects, have an action type (such as 'delete' or 'approve') associated with the objects, and optionally a payload which can store application-specific information such as changed fields, environment information, etc.
+
+Each log entry has a set of properties that provides information about the activity:
 
 * *Time*: The timestamp when the activity occurred.
 * *Product*: The product where the object resides. Example: "Access Management"
@@ -18,30 +32,9 @@ Each log entry has a set of properties that provides us with more information ab
 * *Parent*: (Optional) The parent of the object (if any) on which the action is performed. Mainly relevant to APIs.
 * *Payload*: (Optional) More information about the log properties. Example: If an Organization was created, then the payload would contain information about organization and the owner such as IDs.
 
-== How to Access It
+The following is a list of actions per Product and Object type that Anypoint Platform audits:
 
-Users belonging to the *Organization Administration* role or the *Audit Log Viewer* role on the Anypoint Platform have access to both the UI and the Query API. The audit log service is business group aware, meaning, you will see only logs that are relevant to your own business group. The audit log UI is embedded in Access Manager, if you are not an Organization Administrator, but you have the Audit Log Viewer role, then you will see only the audit log UI under Access Manager.
-
-To view the audit logs, log into link:https://anypoint.mulesoft.com/#/signin[Anypoint Platform] and click *Access Management*. You can also press the Escape key on your keyboard to view the Anypoint Platform navigation menu.
-
-From the Access Management menu, select *Audit Log* 
-
-image:audit-logs.png[auditlogs]
-
-image:audit-logs-screenshot.png[screenshot]
-
-== About the Content of the Log
-
-Activities represented in the log are actions that occur at a particular time, involve one or more objects, have an action type (such as 'delete' or 'approve') associated with the objects, and optionally a payload which can store application-specific information such as changed fields, environment information, etc.
-
-Below is a list of actions per Product and Object type that we currently audit in Anypoint platform :
-
-=== APIs
-
-==== Organization
-
-
-[%header,cols="25a,15a,15a,15a,15a,30a"]
+[%header%autowidth.spread]
 |===
 |User action
 |Obj Type
@@ -1095,7 +1088,8 @@ properties : application metadata
 
 == To Configure Anypoint MQ Audit Logging
 
-Anypoint MQ lets you log each action for creating and maintaining queues,
+link:https://anypoint.mulesoft.com/#/signin[Anypoint Platform] logs 
+Anypoint MQ actions for creating and maintaining queues,
 exchanges, and client applications. These actions appear in the 
 *Access Management* > *Audit Logging* service.
 
@@ -1118,11 +1112,13 @@ These actions are tracked:
 `Delete queue` +
 `Modify queue` +
 `Purge queue` +
-`Create binding` +
-`Delete binding` +
+
 |`Create exchange` +
 `Delete exchange` +
 `Modify exchange` +
+`Create binding` +
+`Delete binding`
+
 |`Create client` +
 `Delete client` +
 `Regenerate client`
@@ -1131,15 +1127,19 @@ These actions are tracked:
 *Notes:* 
 
 * Changing values within a queue causes the `Modify queue` action.
-* Queue actions cannot identify whether a queue is FIFO or non-FIFO.
-* Sending or browsing messages does not cause an action.
+* A queue is only identified as a FIFO queue when creating the queue.
+* Sending, receiving, or browsing messages do not count as auditable actions.
 
 For each action, you can download a payload file (`payload.txt`) to your computer 
 that provides JSON-formatted information describing all MQ settings.
 
 === About Payloads
 
-The following example lists a formatted version of the contents of `payload.txt`:
+A payload is JSON-formatted text that lists all MQ settings that occur when
+an action is audited. When you click the blue payload button, Anypoint 
+Platform downloads the `payload.txt` to your computer.
+
+The following example shows a formatted version of the contents of `payload.txt`:
 
 [source,json,linenums]
 ----

@@ -1,4 +1,4 @@
-= To Use the MQ REST APIs
+= To Use the Anypoint MQ REST APIs
 :keywords: mq, destinations, queues, exchanges
 
 The Anypoint MQ APIs let you use REST to send and receive messages, administer queues and message exchanges, and analyze results. Anypoint provides these APIs, which are described later in this document:

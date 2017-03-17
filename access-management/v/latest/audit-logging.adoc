@@ -1101,6 +1101,8 @@ image:mq-audit-logs.png[mq-audit-logs]
 
 *Note:* After setting the *Products*, *Types*, or *Actions* filters, click *Apply filters*.
 
+You can also search by object name or user. 
+
 === About Actions
 
 These actions are tracked:

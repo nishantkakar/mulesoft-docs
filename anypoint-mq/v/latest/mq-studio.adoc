@@ -1,4 +1,4 @@
-= Configuring MQ in Anypoint Studio
+= To Set Up Studio for the MQ Connector
 :keywords: mq, studio, logger, set payload, install
 
 == Installing the Anypoint MQ Connector
@@ -45,7 +45,6 @@ To configure:
 . In the Global Element Properties window:
 .. Copy the *Anypoint Platform* > *MQ* > *Client App* > *Client App ID* value to Studio's *Client ID* field.
 .. Copy the *Client App* > *Client Secret* value to Studio's *Client Secret* field. You can ignore the other settings to test your first connector.
-.. Ensure that *Max Redelivery* is set to *-1* (default) to ensure that Anypoint MQ keeps retrying to deliver a message that is not delivered. The -1 value indicates that there is no limit to retries.
 +
 If you want to set the remaining fields or tabs, see <<Advanced Global Element Properties>>.
 +
@@ -736,7 +735,6 @@ times out.
 == See Also
 
 * link:/anypoint-mq[Anypoint MQ]
-* link:/anypoint-mq/mq-tutorial[Tutorial]
-* link:/anypoint-mq/mq-queues-and-exchanges[Create queues and message exchanges, and send and receive messages]
-* link:/anypoint-mq/mq-access-management[Set user or role MQ access permission]
-* link:/anypoint-mq/mq-understanding[Understand MQ concepts]
+* link:/anypoint-mq/client-apps[To Configure Client Applications]
+* link:/anypoint-mq/mq-ack-mode[About Acknowledgement Mode]
+* link:/access-management/audit-logging#to-configure-anypoint-mq-audit-logging[MQ Audit Logging]

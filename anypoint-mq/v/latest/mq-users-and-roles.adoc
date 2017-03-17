@@ -1,4 +1,4 @@
-= MQ User and Role Access
+= To set Environment, User, and Role Access
 :keywords: mq, access, roles, anypoint platform
 
 Anypoint Platform lets you manage the link:/access-management/managing-permissions[roles] of those who administer the MQ features in Anypoint Platform for your organization.
@@ -70,7 +70,4 @@ image:mq-list-role-config-settings.png[mq-list-role-config-settings]
 == See Also
 
 * link:/anypoint-mq[Anypoint MQ]
-* link:/anypoint-mq/mq-tutorial[Tutorial]
-* link:/anypoint-mq/mq-queues-and-exchanges[Create queues and exchanges, and send and receive messages]
-* link:/anypoint-mq/mq-studio[Use Anypoint Studio with the MQ Connector]
-* link:/anypoint-mq/mq-understanding[Understand MQ concepts]
+

@@ -34,7 +34,7 @@ NOTE: Message exchange names can only contain these characters: a-z, A-Z, 0-9, p
 +
 image:mq-exchange-details2.png[mq-exchange-details2]
 
-NOTE: If you need to delete a message exchange, see link:/anypoint-mq/mq-faq#how-do-i-delete-an-exchange[FAQ: How do I delete a message exchange?]
+*Note:* If you need to delete a message exchange, see link:/anypoint-mq/mq-faq#how-do-i-delete-an-exchange[FAQ: How do I delete a message exchange?]
 
 == To Bind a Queue to a Message Exchange
 
@@ -83,3 +83,6 @@ in link:/anypoint-mq/mq-queues#to-get-a-message-from-a-queue[To Get a Message Fr
 You can also send comma-separated value (CSV) or JSON content in the payload by changing
 the message *Type* value. For more information, see link:/anypoint-mq/mq-queues#to-send-a-csv-or-json-message[To Send a CSV or JSON Message].
 
+== See Also
+
+* link:/anypoint-mq[Anypoint MQ]

@@ -1,4 +1,4 @@
-= To set Environment, User, and Role Access
+= To Set Environment, User, and Role Access
 :keywords: mq, access, roles, environment, anypoint platform
 
 Anypoint Platform lets you manage the link:/access-management/managing-permissions[roles] of those who administer the MQ features in Anypoint Platform for your organization.

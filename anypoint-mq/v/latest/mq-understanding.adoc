@@ -1,4 +1,4 @@
-= About MQ
+= About Anypoint MQ
 :keywords: mq, destinations, queues, exchanges
 
 Anypoint MQ is an enterprise multi-tenant, cloud messaging service that performs advanced asynchronous messaging scenarios between applications. Anypoint MQ is fully integrated with Anypoint Platform, offering role based access control, client application management, and connectors.

@@ -1,4 +1,4 @@
-= About Frequently Asked Questions
+= FAQ: Anypoint MQ
 :keywords: mq, faq, questions, answers
 
 This document lists frequently asked questions about link:/anypoint-mq[Anypoint MQ].

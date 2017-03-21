@@ -7,7 +7,7 @@ The audit logging service provides a queryable history of actions performed with
 
 == To Access Audit Logging
 
-Users belonging to the *Organization Administration* role or the *Audit Log Viewer* role on the Anypoint Platform have access to both the UI and the Query API. The audit log service is business group aware, meaning, you will see only logs that are relevant to your own business group. The audit log UI is embedded in Access Manager, if you are not an Organization Administrator, but you have the Audit Log Viewer role, then you will see only the audit log UI under Access Manager.
+Users belonging to the *Organization Administration* role or the *Audit Log Viewer* role on the Anypoint Platform have access to both the UI and the Query API. The audit log service is business group aware, meaning, you will see only logs that are relevant to your own business group. The audit log UI is embedded in Access Manager, if you are not an Organization Administrator, but you have the Audit Log Viewer role, then you can only see the audit log user interface under Access Manager.
 
 To view the audit logs, log into link:https://anypoint.mulesoft.com/#/signin[Anypoint Platform] and click *Access Management*. You can also press the Escape key on your keyboard to view the Anypoint Platform navigation menu.
 
@@ -34,7 +34,7 @@ Each log entry has a set of properties that provides information about the activ
 
 The following is a list of actions per Product and Object type that Anypoint Platform audits:
 
-[%header%autowidth.spread]
+[%header,cols="25a,15a,15a,15a,15a,30a"]
 |===
 |User action
 |Obj Type
@@ -42,6 +42,7 @@ The following is a list of actions per Product and Object type that Anypoint Pla
 |Parent
 |Action
 |Payload
+
 |Set T&C
 |T&C
 |T&C
@@ -49,6 +50,7 @@ The following is a list of actions per Product and Object type that Anypoint Pla
 |Create
 |subaction : none
 properties : New T&Cs
+
 |Modify T&C
 |T&C
 |T&C
@@ -56,6 +58,7 @@ properties : New T&Cs
 |Edit
 |subaction : none
 properties : New T&Cs
+
 |Set org custom theme
 |Portal theme
 |Org Name
@@ -63,6 +66,7 @@ properties : New T&Cs
 |Create
 |subaction : none
 properties : theme data
+
 |Edit org custom theme
 |Bus. Group
 |Org Name
@@ -70,6 +74,7 @@ properties : theme data
 |Edit
 |subaction : none
 properties : theme data
+
 |Add custom policy
 |Policy
 |PolicyID
@@ -77,6 +82,7 @@ properties : theme data
 |Create
 |subaction : none
 properties : none
+
 |Delete custom policy
 |Policy
 |PolicyID
@@ -84,7 +90,6 @@ properties : none
 |Delete
 |subaction : none
 properties : policy data
-
 |===
 
 ==== APIs
@@ -257,7 +262,6 @@ properties : deploy location (app name & server name for hybrid)
 |Edit
 |subaction : Configure endpoint
 properties : new endpoint
-
 
 |Redeploy proxy
 |API Version

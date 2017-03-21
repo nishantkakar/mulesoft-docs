@@ -1164,7 +1164,7 @@ contents of `payload.txt` after creating a queue:
 
 The possible fields in `payload.txt` are:
 
-[%header,cols="20s,80a"]
+[%header,cols="30s,70a"]
 |===
 |Field |Description
 |organizationId |Organization ID for the current Anypoint Platform account. 

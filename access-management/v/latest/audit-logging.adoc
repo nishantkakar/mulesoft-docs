@@ -1086,7 +1086,7 @@ properties : application metadata
 
 |===
 
-== To Configure Anypoint MQ Audit Logging
+== To Query Audit Logging for Anypoint MQ
 
 link:https://anypoint.mulesoft.com/#/signin[Anypoint Platform] logs 
 Anypoint MQ actions for creating and maintaining queues,
